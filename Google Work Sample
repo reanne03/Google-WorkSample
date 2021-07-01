@@ -1,0 +1,64 @@
+"""A youtube terminal simulator."""
+from .video_player import VideoPlayer
+from .command_parser import CommandException
+from .command_parser import CommandParser
+
+
+if __name__ == "__main__":
+    print("""Hello and welcome to YouTube, what would you like to do?
+    Enter HELP for list of available commands or EXIT to terminate.""")
+    video_player = VideoPlayer()
+    parser = CommandParser(video_player)
+    while True:
+        command = input("YT> ")
+        if command.upper() == "EXIT":
+            break
+        try:
+            parser.execute_command(command.split())
+        except CommandException as e:
+            print(e)
+    print("YouTube has now terminated its execution. "
+          "Thank you and goodbye!")
+
+    def number_of_videos(self):
+        num_videos = len(self._video_library.get_all_videos())
+        print(f"{num_videos} videos in the library")
+
+    def show_all_videos(self):
+            """Returns all videos."""
+
+            print("show_all_videos needs implementation")
+
+def play_video(self, video_id):
+    """Plays the respective video.
+
+    Args:
+        video_id: The video_id to be played.
+    """
+    print("play_video needs implementation")
+
+ def stop_video(self):
+        """Stops the current video."""
+
+        print("stop_video needs implementation")
+
+    def play_random_video(self):
+        """Plays a random video from the video library."""
+
+        print("play_random_video needs implementation")
+
+    def pause_video(self):
+        """Pauses the current video."""
+
+        print("pause_video needs implementation")
+
+    def continue_video(self):
+        """Resumes playing the current video."""
+
+        print("continue_video needs implementation")
+
+    def show_playing(self):
+        """Displays video currently playing."""
+
+        print("show_playing needs implementation")
+
